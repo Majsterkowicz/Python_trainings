@@ -6,9 +6,10 @@ def accum(s: str) -> str:
     for x in s:
         counter += 1
         sub_str = x * counter
-        new_str += sub_str.capitalize()
-        # ''.join(sub_str.capitalize())
-    return (new_str)
+        new_str += "-" + sub_str.capitalize()
+        '-'.join(sub_str.capitalize())
+    return (('-'.join(x for x in (s.casefold()))))
+    # return (new_str[1:])
 
 
 test_str: str = "addSae"
