@@ -13,8 +13,8 @@ def accum(s: str) -> str:
     for x in s.casefold():
         counter += 1
         # sub_str = x * counter
-        # new_str += "-" + (x * counter).capitalize()
-        '-'.join(("-" + (x * counter).capitalize()).capitalize())
+        new_str += "-" + (x * counter).capitalize()
+        '-'.join(new_str.capitalize())
     # return (('-'.join(x * range(s) for x in (s.casefold()))))
     return (new_str[1:])
 
