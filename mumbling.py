@@ -6,15 +6,15 @@
 # accum("cwAt") -> "C-Ww-Aaa-Tttt"
 
 def accum(s: str) -> str:
-    sub_str: str = ""
+    # sub_str: str = ""
     new_str: str = ""
     counter: int = 0
-    s = s.casefold()
-    for x in s:
+    # s = s.casefold()
+    for x in s.casefold():
         counter += 1
-        sub_str = x * counter
-        new_str += "-" + sub_str.capitalize()
-        '-'.join(sub_str.capitalize())
+        # sub_str = x * counter
+        # new_str += "-" + (x * counter).capitalize()
+        '-'.join(("-" + (x * counter).capitalize()).capitalize())
     # return (('-'.join(x * range(s) for x in (s.casefold()))))
     return (new_str[1:])
 
