@@ -1,3 +1,10 @@
+# https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/python
+# This time no story, no theory.
+# The examples below show you how to write function 'accum':
+# accum("abcd") -> "A-Bb-Ccc-Dddd"
+# accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+# accum("cwAt") -> "C-Ww-Aaa-Tttt"
+
 def accum(s: str) -> str:
     sub_str: str = ""
     new_str: str = ""
@@ -8,8 +15,8 @@ def accum(s: str) -> str:
         sub_str = x * counter
         new_str += "-" + sub_str.capitalize()
         '-'.join(sub_str.capitalize())
-    return (('-'.join(x for x in (s.casefold()))))
-    # return (new_str[1:])
+    # return (('-'.join(x * range(s) for x in (s.casefold()))))
+    return (new_str[1:])
 
 
 test_str: str = "addSae"
