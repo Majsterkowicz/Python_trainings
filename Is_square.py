@@ -23,16 +23,17 @@ from math import sqrt
 
 
 def is_square(n: int) -> bool:
-    if n >= 0 and (str((sqrt(n))).endswith("0")) is True:
+    # if n >= 0 and (str((sqrt(n))).endswith("0")) is True:
         # nn: int = 0
         # nn = sqrt(n)
         # print((nn))
         # if (str(int(sqrt(n))).endswith("0")) is True:
-        return True
-    else:
-        return False
+    #     return True
     # else:
     #     return False
+    # else:
+    #     return False
+    return True if (n >= 0 and (str((sqrt(n))).endswith("0")) is True) else False
     
 
 test_number: int = -25
