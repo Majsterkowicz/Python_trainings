@@ -6,11 +6,11 @@
 
 
 def move_zeros(lst):
-    # if not lst.count(0):
-    #     return lst
-    # else:
     n: int = lst.count(0)
-    nlst = [i for i in lst if i != 0]
+    if n == 0:
+        return lst
+    else:
+        nlst = [i for i in lst if i != 0]
     for i in range(n):
         nlst.append(0)
     return nlst
