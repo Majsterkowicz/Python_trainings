@@ -8,21 +8,22 @@
 # Note: If the number is a multiple of both 3 and 5, only count it once.
 
 def solution(number: int) -> int:
-    number_list = []
-    temp_number3: int = 0
-    temp_number5: int = 0
-    if number > 3:
-        while temp_number3 < number:
-            number_list.append(temp_number3)
-            temp_number3 += 3
-        while temp_number5 < number:
-            if temp_number5 not in number_list:
-                number_list.append(temp_number5)
-            temp_number5 += 5
-        return sum(number_list)
-    else:
-        return 0
+    # number_list = []
+    # temp_number3: int = 0
+    # temp_number5: int = 0
+    # if number > 3:
+    #     while temp_number3 < number:
+    #         number_list.append(temp_number3)
+    #         temp_number3 += 3
+    #     while temp_number5 < number:
+    #         if temp_number5 not in number_list:
+    #             number_list.append(temp_number5)
+    #         temp_number5 += 5
+    #     return sum(number_list)
+    # else:
+    #     return 0
+    return sum([i for i in range(1, number) if not i % 3 or not i % 5])
 
 
-test_number: int = 10
+test_number: int = 25
 print(solution(test_number))
