@@ -11,7 +11,10 @@
 # (which is odd).
 
 def find_it(seq):
-    seq.sort()
-    temp_int: int = 0
     for x in seq:
-        
+        if seq.count(x) % 2 == 1:
+            return x
+
+
+test_list: int = [20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]
+print(find_it(test_list))
