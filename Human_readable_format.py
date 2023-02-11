@@ -15,6 +15,25 @@ def make_readable(sec):
     return '%s:%s:%s' % (str(h).zfill(2), str(m).zfill(2), str(s).zfill(2))
     # return '({}) {}-{}'.format(str1, str2, str3)
 
+# Another solutions from CodeWars:
+
+
+def make_readable_1(s):
+    return '{:02}:{:02}:{:02}'.format(s / 3600, s / 60 % 60, s % 60)
+
+
+def make_readable_2(seconds):
+    hours, seconds = divmod(seconds, 60 ** 2)
+    minutes, seconds = divmod(seconds, 60)
+    return '{:02}:{:02}:{:02}'.format(hours, minutes, seconds)
+
+
+def make_readable_3(seconds):
+    h = seconds/60**2
+    m = (seconds % 60**2)/60
+    s = (seconds % 60**2 % 60)
+    return "%02d:%02d:%02d" % (h, m, s)
+
 
 test_seconds: int = 8666
 print(make_readable(test_seconds))
