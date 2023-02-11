@@ -1,3 +1,4 @@
+# https://www.codewars.com/kata/52685f7382004e774f0001f7/train/python
 # Write a function, which takes a non-negative integer (sec)
 # as input and returns the time in a human-readable format (HH:MM:SS)
 
