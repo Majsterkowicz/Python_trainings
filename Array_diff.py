@@ -23,6 +23,25 @@ def array_diff(a, b):
     return [elmnt for elmnt in a if elmnt not in setb]
 
 
+# some others solutions from CodeWars users:
+def array_diff_1(a, b):
+    return filter(lambda i: i not in b, a)
+
+
+def array_diff_2(a, b):
+    for i in range(len(b)):
+        while b[i] in a:
+            a.remove(b[i])
+    return a
+
+
+def array_diff_3(a, b):
+    for n in b:
+        while (n in a):
+            a.remove(n)
+    return a
+
+
 test_array_a = [1, 2, 3, 2, 3, 3, 2, 1, 5]
 test_array_b = [1, 2]
 print(array_diff(test_array_a, test_array_b))
