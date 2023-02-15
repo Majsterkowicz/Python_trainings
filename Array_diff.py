@@ -14,11 +14,12 @@
 
 
 def array_diff(a, b):
-    output_a = []
-    for elmnt in a:
-        if elmnt not in b:
-            output_a.append(elmnt)
-    return output_a
+    # output_a = []
+    # for elmnt in a:
+    #     if elmnt not in b:
+    #         output_a.append(elmnt)
+    # return output_a
+    return [elmnt for elmnt in a if elmnt not in b]
 
 
 test_array_a = [1, 2, 3, 2, 3, 3, 2, 1, 5]
