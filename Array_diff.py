@@ -19,7 +19,8 @@ def array_diff(a, b):
     #     if elmnt not in b:
     #         output_a.append(elmnt)
     # return output_a
-    return [elmnt for elmnt in a if elmnt not in b]
+    setb = set(b)
+    return [elmnt for elmnt in a if elmnt not in setb]
 
 
 test_array_a = [1, 2, 3, 2, 3, 3, 2, 1, 5]
