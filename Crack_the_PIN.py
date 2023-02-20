@@ -15,15 +15,29 @@
 
 
 import hashlib
+from hashlib import md5         # for example no2
+from itertools import product   # for example no2
 
 
 def crack(hash: str) -> str:
-    # pin: int = 1
     for x in range(0, 100000):
         str_pin: str = "{:05}".format(x)
         pin_hashed: str = (hashlib.md5(str_pin.encode())).hexdigest()
         if hash == pin_hashed:
             return str_pin
+
+
+# some solutions of users of CodeWars
+def crack_1(hash):
+    for i in range(100000):
+        if hashlib.md5(str(i).zfill(5).encode()).hexdigest() == hash:
+            return str(i).zfill(5)
+        
+
+def crack_2(hash):
+    for bs in map(bytes, product(b'0123456789', repeat=5)):
+        if md5(bytes(bs)).hexdigest() == hash:
+            return bs.decode()
 
 
 # given_hash: str = "827ccb0eea8a706c4c34a16891f84e7b"          # hashed "12345"
