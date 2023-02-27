@@ -30,11 +30,32 @@ def digital_root(n):
 
 
 def digital_root_1(n):
-    return n if n < 10 else digital_root(sum(map(int, str(n))))
+    return n if n < 10 else digital_root_1(sum(map(int, str(n))))
 
 
 def digital_root_2(n):
     return n % 9 or n and 9
+
+# Repetition is the mother of didactics, so here's a simple explanation:
+
+# If n is not divisible by 9, the digital root is simply n % 9 (see Rellek's
+# answer on this StackExchange post for a concise explanation).
+
+# If n IS divisible by 9, we have n % 9 == 0, which can't be the digital root.
+# Then, the correct result is 9. An even simpler solution would be
+
+# def digital_root(n):
+#   return n % 9 or 9
+# But this fails if n == 0 (here, the correct result is 0, of course).
+# Therefore, return n % 9 or (n and 9) (redundant parantheses added for
+# clarity) is short for
+
+# if n == 0:
+#   return 0
+# elif n % 9 == 0:
+#   return 9
+# else:
+#   return n % 9
 
 
 def digital_root_3(n):
