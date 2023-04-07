@@ -22,17 +22,27 @@
 def cakes(r, a):
     r_set = set(r.keys())
     a_set = set(a.keys())
-    result: int = 0
+    temp_array = []
     if r_set.intersection(a_set) != r_set:
         return 0
     else:
         for x in r:
             temp: int = int(a.get(x) / r.get(x))
-            if temp < result:               # line to check
-                result = temp
-        return result
+            temp_array.append(temp)
+        return min(temp_array)
+
+
+def cakes_1(recipe, available):
+    return min(available.get(k, 0)/recipe[k] for k in recipe)
+
+
+def cakes_2(recipe, available):
+    try:
+        return min([available[a]/recipe[a] for a in recipe])
+    except:
+        return 0
 
 
 recipe = {"flour": 500, "sugar": 200, "eggs": 1, 'milk': 4}
-available = {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200}
+available = {"sugar": 1200, "flour": 1500, "eggs": 5, "milk": 200, "apple": 5}
 print(cakes(recipe, available))
